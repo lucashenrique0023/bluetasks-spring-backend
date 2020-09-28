@@ -35,7 +35,7 @@ public class Task implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "app_user_id")
-	@NotNull(message = "O usuario da tarefa e obrigatorio")
+	//@NotNull(message = "O usuario da tarefa e obrigatorio")
 	private AppUser appUser;
 
 	public Task() {
