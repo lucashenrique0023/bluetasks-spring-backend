@@ -24,18 +24,18 @@ public class Task implements Serializable {
 	private Integer id;
 	
 	@NotEmpty(message = "A descricao da tarefa e obrigatoria")
-	@Length(min = 3, max = 40, message = "O tamanho da tarefa e invalido.")
+	@Length(min = 3, max = 40, message = "O tamanho da tarefa e invalido")
 	private String description;
 	
 	@NotNull(message = "A data da tarefa e obrigatoria.")
-	@FutureOrPresent(message = "A data da tarefa nao pode ser inferior a data atual.")
+	@FutureOrPresent(message = "A data da tarefa nao pode ser inferior a data atual")
 	private LocalDate whenToDo;
 	
 	private Boolean done = false;
 	
 	@ManyToOne
 	@JoinColumn(name = "app_user_id")
-	@NotNull(message = "O usuario da tarefa e obrigatorio.")
+	@NotNull(message = "O usuario da tarefa e obrigatorio")
 	private AppUser appUser;
 
 	public Task() {
