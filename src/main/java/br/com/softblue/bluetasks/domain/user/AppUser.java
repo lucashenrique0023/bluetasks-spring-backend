@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "app_user")
@@ -15,10 +16,13 @@ public class AppUser implements Serializable {
 	@GeneratedValue
 	private Integer id;
 	
+	@NotEmpty(message = "Nome do usuario e obrigatorio")
 	private String username;
 	
+	@NotEmpty(message = "A senha e obrigatoria")
 	private String password;
 	
+	@NotEmpty(message = "O nome de exibicao e obrigatorio")
 	private String displayName;
 	
 	public AppUser() {
