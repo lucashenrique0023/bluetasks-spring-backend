@@ -1,5 +1,7 @@
 package br.com.softblue.bluetasks;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -13,9 +15,11 @@ import br.com.softblue.bluetasks.domain.task.Task;
 
 @SpringBootApplication
 public class BluetasksBackendApplication implements RepositoryRestConfigurer {
+	private static final Logger logger = LoggerFactory.getLogger(BluetasksBackendApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(BluetasksBackendApplication.class, args);
+		logger.info("Bluetasks Iniciado!");
 	}
 	
 	// Poderiamos criar uma nova classe anotar com @Configure e implementar a configuracao la.
@@ -36,6 +40,8 @@ public class BluetasksBackendApplication implements RepositoryRestConfigurer {
 		Validator validator = validator();
 		validatingListener.addValidator("beforeCreate", validator);
 		validatingListener.addValidator("beforeSave", validator);
+		
+		logger.info("Configure Validator... OK!");
 	}
 
 }
