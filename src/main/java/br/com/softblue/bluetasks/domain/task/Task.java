@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -17,6 +18,7 @@ import org.hibernate.validator.constraints.Length;
 import br.com.softblue.bluetasks.domain.user.AppUser;
 
 @Entity
+@EntityListeners(TaskListener.class)
 public class Task implements Serializable {
 	
 	@Id
