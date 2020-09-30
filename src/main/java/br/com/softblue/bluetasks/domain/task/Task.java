@@ -24,7 +24,7 @@ public class Task implements Serializable {
 	private Integer id;
 	
 	@NotEmpty(message = "A descricao da tarefa e obrigatoria")
-	@Length(min = 3, max = 40, message = "O tamanho da tarefa e invalido")
+	@Length(min = 3, max = 60, message = "O tamanho da tarefa e invalido")
 	private String description;
 	
 	@NotNull(message = "A data da tarefa e obrigatoria.")
