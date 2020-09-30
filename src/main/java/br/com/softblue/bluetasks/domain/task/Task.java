@@ -15,6 +15,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.com.softblue.bluetasks.domain.user.AppUser;
 
 @Entity
@@ -37,7 +39,8 @@ public class Task implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "app_user_id")
-	//@NotNull(message = "O usuario da tarefa e obrigatorio")
+	@NotNull(message = "O usuario da tarefa e obrigatorio")
+	@JsonIgnore // Nao aparece na serializacao JSON
 	private AppUser appUser;
 
 	public Task() {

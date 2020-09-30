@@ -13,6 +13,7 @@ import br.com.softblue.bluetasks.domain.user.AppUserRepository;
 @Component
 public class TaskListener {
 
+	
 	private static AppUserRepository appUserRepository;
 	
 	@PrePersist
